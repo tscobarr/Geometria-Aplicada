@@ -44,6 +44,10 @@ def main():
                 prev_mouse_pos = pygame.mouse.get_pos()
             elif event.type == pygame.MOUSEBUTTONUP:
                 prev_mouse_pos = None
+                if event.button == 4:  # Scroll Up
+                    zoom += zoom_speed
+                elif event.button == 5:  # Scroll Down
+                    zoom -= zoom_speed
 
         if prev_mouse_pos is not None and pygame.mouse.get_pressed()[0]:  # Left mouse button pressed
             current_mouse_pos = pygame.mouse.get_pos()
